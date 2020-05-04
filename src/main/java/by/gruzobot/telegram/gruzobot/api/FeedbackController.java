@@ -15,7 +15,7 @@ public class FeedbackController {
      */
     @PostMapping(value = "/feedback", headers = {"Content-type=application/json"})
     @ResponseStatus(HttpStatus.OK)
-    public String getCurrentTime(@RequestBody Feedback feedback) {
+    public String resolve(@RequestBody Feedback feedback) {
         String messageToChat = String.format("Поступила заявка на звонок. %n" +
                 "Имя: %s%nНомер: %s", feedback.getName(), feedback.getPhone());
         Logic currentThreadBot = Logic.getInstance();
